@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guatemala · April 2026</title>
+<title>Guatemala · Maman & Jeremy · April 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -18,6 +18,9 @@
     --sky: #74c0bd;
     --coral: #e07a5f;
     --white: #fdfcfa;
+    --confirmed-bg: #eaf5ef;
+    --confirmed-color: #2d6a4f;
+    --confirmed-border: #b7dfc9;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +40,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .hero::before {
     content: '';
     position: absolute;
@@ -46,7 +48,6 @@
     background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
     border-radius: 50%;
   }
-
   .hero::after {
     content: '';
     position: absolute;
@@ -55,9 +56,7 @@
     background: radial-gradient(circle, rgba(116,192,189,0.14) 0%, transparent 70%);
     border-radius: 50%;
   }
-
   .hero-tag {
-    font-family: 'DM Sans', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 3px;
@@ -65,38 +64,29 @@
     color: var(--gold-light);
     margin-bottom: 14px;
   }
-
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 7vw, 68px);
+    font-size: clamp(34px, 6vw, 62px);
     line-height: 1.05;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--gold-light);
-  }
-
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
   .hero-sub {
     font-size: 15px;
     font-weight: 300;
     opacity: 0.82;
-    margin-top: 10px;
-    letter-spacing: 0.3px;
+    margin-top: 8px;
   }
-
   .hero-dates {
     display: inline-block;
-    margin-top: 24px;
+    margin-top: 22px;
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 40px;
     padding: 8px 20px;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.5px;
   }
 
   .route-strip {
@@ -107,46 +97,110 @@
     align-items: center;
     gap: 10px;
     font-size: 13px;
-    font-weight: 400;
     flex-wrap: wrap;
-    letter-spacing: 0.3px;
   }
-
   .route-strip .stop { color: var(--gold-light); font-weight: 500; }
   .route-strip .arrow { opacity: 0.4; }
 
-  /* MAIN */
   .container {
     max-width: 860px;
     margin: 0 auto;
     padding: 40px 24px 80px;
   }
 
-  /* BOOKING STATUS BANNER */
-  .booking-banner {
-    background: var(--white);
-    border: 1.5px solid var(--jade-pale);
-    border-left: 4px solid var(--jade);
-    border-radius: 12px;
-    padding: 18px 22px;
-    margin-bottom: 40px;
+  /* FLIGHT SUMMARY CARD */
+  .flight-summary {
+    background: var(--bark);
+    color: var(--white);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-bottom: 32px;
+  }
+  .flight-summary-top {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
   }
-
-  .booking-banner .icon { font-size: 22px; margin-top: 1px; }
-
-  .booking-banner h3 {
-    font-size: 14px;
+  .flight-summary h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--gold-light);
+  }
+  .flight-confirm-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
     font-weight: 500;
-    margin-bottom: 4px;
-    color: var(--jade);
+    letter-spacing: 0.5px;
   }
+  .flight-ref {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    font-family: monospace;
+  }
+  .flights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media(max-width:600px){ .flights-grid { grid-template-columns: 1fr; } }
 
-  .booking-banner p { font-size: 13px; opacity: 0.7; line-height: 1.5; }
+  .flight-leg {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .flight-leg-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+  .flight-route {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .flight-iata {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: monospace;
+  }
+  .flight-arrow { opacity: 0.5; font-size: 14px; }
+  .flight-meta { font-size: 12px; opacity: 0.7; line-height: 1.7; }
+  .flight-meta strong { opacity: 1; color: var(--white); }
 
-  /* SECTION HEADERS */
+  .cal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: var(--gold);
+    color: var(--bark);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .cal-btn:hover { background: var(--gold-light); }
+  .cal-btn svg { width: 16px; height: 16px; }
+
+  /* SECTION */
   .section-label {
     font-size: 10px;
     letter-spacing: 3px;
@@ -158,10 +212,7 @@
     border-bottom: 1px solid var(--jade-pale);
   }
 
-  /* DESTINATION BLOCKS */
-  .destination {
-    margin-bottom: 48px;
-  }
+  .destination { margin-bottom: 48px; }
 
   .dest-header {
     display: flex;
@@ -169,36 +220,23 @@
     gap: 16px;
     margin-bottom: 20px;
   }
-
   .dest-num {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
+    width: 44px; height: 44px; min-width: 44px;
     background: var(--jade);
     color: var(--white);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-style: italic;
+    font-size: 18px; font-style: italic;
     margin-top: 2px;
   }
-
   .dest-title h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: 26px; font-weight: 700; line-height: 1.15;
   }
-
   .dest-title .dest-meta {
-    font-size: 12px;
-    color: var(--jade-light);
-    font-weight: 500;
-    margin-top: 3px;
-    letter-spacing: 0.3px;
+    font-size: 12px; color: var(--jade-light);
+    font-weight: 500; margin-top: 3px;
   }
 
   /* HOTEL CARD */
@@ -208,272 +246,152 @@
     border: 1.5px solid #e5ede9;
     padding: 20px 22px;
     margin-bottom: 12px;
-    position: relative;
     transition: box-shadow 0.2s;
   }
-
   .hotel-card:hover { box-shadow: 0 4px 20px rgba(45,106,79,0.1); }
+  .hotel-card.confirmed { border-color: var(--confirmed-border); border-left: 4px solid var(--jade); }
 
   .hotel-card-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 12px; flex-wrap: wrap;
   }
-
   .hotel-name {
     font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 17px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
   }
-
   .hotel-name .emoji { font-size: 18px; }
 
   .booking-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.5px;
     white-space: nowrap;
   }
+  .status-pending { background: #fff8e6; color: #a07010; border: 1px solid #f0d080; }
+  .status-confirmed { background: var(--confirmed-bg); color: var(--confirmed-color); border: 1px solid var(--confirmed-border); }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
-  .status-pending {
-    background: #fff8e6;
-    color: #a07010;
-    border: 1px solid #f0d080;
-  }
-
-  .status-confirmed {
-    background: #eaf5ef;
-    color: #2d6a4f;
-    border: 1px solid #b7dfc9;
-  }
-
-  .status-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-  }
-
-  .hotel-detail {
-    font-size: 13px;
-    color: #666;
-    margin-top: 8px;
-    line-height: 1.6;
-  }
-
-  .hotel-detail a {
-    color: var(--jade-light);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
+  .hotel-detail { font-size: 13px; color: #666; margin-top: 8px; line-height: 1.6; }
+  .hotel-detail a { color: var(--jade-light); text-decoration: none; font-weight: 500; }
   .hotel-detail a:hover { text-decoration: underline; }
 
   .hotel-note {
-    margin-top: 10px;
-    padding: 10px 14px;
-    background: var(--mist);
-    border-radius: 8px;
-    font-size: 12.5px;
-    color: var(--jade);
-    line-height: 1.55;
+    margin-top: 10px; padding: 10px 14px;
+    background: var(--mist); border-radius: 8px;
+    font-size: 12.5px; color: var(--jade); line-height: 1.55;
   }
+  .hotel-note.confirmed-note {
+    background: var(--confirmed-bg); color: var(--jade);
+    border-left: 3px solid var(--jade);
+  }
+
+  /* BOOKING DETAILS BOX */
+  .booking-details {
+    margin-top: 12px;
+    background: #f7fbf9;
+    border: 1px solid var(--confirmed-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .bd-item .bd-label {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--jade-light); margin-bottom: 3px;
+  }
+  .bd-item .bd-value { font-size: 13px; font-weight: 500; color: var(--bark); }
 
   /* DAY CARDS */
-  .days-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 16px;
-  }
-
+  .days-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
   .day-card {
-    background: var(--white);
-    border-radius: 12px;
-    border: 1.5px solid #e5ede9;
-    padding: 16px 20px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
+    background: var(--white); border-radius: 12px;
+    border: 1.5px solid #e5ede9; padding: 16px 20px;
+    display: flex; gap: 16px; align-items: flex-start;
   }
-
   .day-pill {
-    background: var(--jade-pale);
-    color: var(--jade);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-    margin-top: 2px;
+    background: var(--jade-pale); color: var(--jade);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 20px;
+    white-space: nowrap; margin-top: 2px;
   }
-
-  .day-content h4 {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  .day-content p {
-    font-size: 12.5px;
-    color: #666;
-    line-height: 1.55;
-  }
-
+  .day-content h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .day-content p { font-size: 12.5px; color: #666; line-height: 1.55; }
   .activity-tag {
-    display: inline-block;
-    background: #f5f0e8;
-    border: 1px solid #e0d8c8;
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--bark);
-    margin-top: 6px;
-    margin-right: 4px;
+    display: inline-block; background: #f5f0e8; border: 1px solid #e0d8c8;
+    border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 500;
+    color: var(--bark); margin-top: 6px; margin-right: 4px;
   }
 
-  /* ACTIVITIES SECTION */
+  /* ACTIVITIES */
   .activities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 12px;
-    margin-top: 8px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px; margin-top: 8px;
   }
-
   .activity-card {
-    background: var(--white);
-    border-radius: 12px;
-    border: 1.5px solid #e5ede9;
-    padding: 16px 18px;
+    background: var(--white); border-radius: 12px;
+    border: 1.5px solid #e5ede9; padding: 16px 18px;
   }
-
   .activity-card .act-icon { font-size: 24px; margin-bottom: 8px; }
   .activity-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
   .activity-card p { font-size: 12px; color: #666; line-height: 1.5; }
   .activity-card a { color: var(--jade-light); font-size: 12px; font-weight: 500; text-decoration: none; display: block; margin-top: 8px; }
   .activity-card a:hover { text-decoration: underline; }
-
-  .activity-card .act-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 500;
-    margin-top: 10px;
+  .act-status {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 500; margin-top: 10px;
   }
 
-  /* PRACTICAL INFO */
-  .practical {
-    background: var(--bark);
-    color: var(--white);
-    border-radius: 16px;
-    padding: 28px 28px;
-    margin-top: 48px;
-  }
-
-  .practical h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: var(--gold-light);
-  }
-
-  .practical-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-  }
-
-  .practical-item { padding: 14px 16px; background: rgba(255,255,255,0.07); border-radius: 10px; }
-  .practical-item .p-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; margin-bottom: 6px; }
-  .practical-item .p-value { font-size: 14px; font-weight: 400; line-height: 1.5; }
-  .practical-item a { color: var(--gold-light); text-decoration: none; }
-
-  /* BOOKING CHECKLIST */
+  /* CHECKLIST */
   .checklist {
-    background: var(--white);
-    border-radius: 14px;
-    border: 1.5px solid #e5ede9;
-    padding: 24px 24px;
-    margin-top: 40px;
+    background: var(--white); border-radius: 14px;
+    border: 1.5px solid #e5ede9; padding: 24px 24px; margin-top: 40px;
   }
-
-  .checklist h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    margin-bottom: 18px;
-  }
-
+  .checklist h2 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 18px; }
   .checklist-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid #f0ece4;
-    font-size: 13.5px;
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid #f0ece4; font-size: 13.5px;
   }
-
   .checklist-item:last-child { border-bottom: none; }
-
   .check-box {
-    width: 20px; height: 20px;
-    min-width: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.15s;
+    width: 20px; height: 20px; min-width: 20px;
+    border: 2px solid #ccc; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.15s;
   }
-
-  .check-box.checked {
-    background: var(--jade);
-    border-color: var(--jade);
-    color: white;
-    font-size: 12px;
-  }
-
+  .check-box.checked { background: var(--jade); border-color: var(--jade); color: white; font-size: 12px; }
+  .check-box.pre-checked { background: var(--jade); border-color: var(--jade); color: white; font-size: 12px; }
   .checklist-item .item-label { flex: 1; }
   .checklist-item .item-label .urgent { color: var(--coral); font-weight: 500; font-size: 11px; margin-left: 6px; }
+  .checklist-item .item-label .done { color: var(--jade); font-weight: 500; font-size: 11px; margin-left: 6px; }
   .checklist-item .item-phone { font-size: 12px; color: var(--jade-light); font-weight: 500; }
 
-  /* DIVIDER */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #d0e8dc, transparent);
-    margin: 40px 0;
+  /* PRACTICAL */
+  .practical {
+    background: var(--bark); color: var(--white);
+    border-radius: 16px; padding: 28px 28px; margin-top: 48px;
   }
+  .practical h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; color: var(--gold-light); }
+  .practical-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .practical-item { padding: 14px 16px; background: rgba(255,255,255,0.07); border-radius: 10px; }
+  .practical-item .p-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; margin-bottom: 6px; }
+  .practical-item .p-value { font-size: 14px; line-height: 1.5; }
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 12px;
-    color: #aaa;
-    border-top: 1px solid #e8e0d4;
-  }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, #d0e8dc, transparent); margin: 40px 0; }
+
+  footer { text-align: center; padding: 30px; font-size: 12px; color: #aaa; border-top: 1px solid #e8e0d4; }
 
   @media (max-width: 600px) {
     .hero { padding: 40px 24px 36px; }
     .route-strip { padding: 12px 20px; }
     .container { padding: 28px 16px 60px; }
-    .dest-header { gap: 12px; }
     .activities-grid { grid-template-columns: 1fr; }
     .practical-grid { grid-template-columns: 1fr 1fr; }
+    .booking-details { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -482,33 +400,74 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-tag">Family Adventure</div>
-  <h1>Guatemala<br><em>with my son</em></h1>
+  <h1>Guatemala<br><em>Maman & Jeremy</em></h1>
   <div class="hero-sub">Jungle temples · Volcanic lakes · Pacific surf</div>
   <div class="hero-dates">📅 April 2 – 9, 2026 · 7 nights</div>
 </div>
 
 <!-- ROUTE STRIP -->
 <div class="route-strip">
-  <span>✈️ SFO</span>
-  <span class="arrow">→</span>
-  <span class="stop">Tikal</span>
-  <span class="arrow">→</span>
-  <span class="stop">Lake Atitlán</span>
-  <span class="arrow">→</span>
-  <span class="stop">El Paredón</span>
-  <span class="arrow">→</span>
+  <span>✈️ SFO</span><span class="arrow">→</span>
+  <span class="stop">Tikal</span><span class="arrow">→</span>
+  <span class="stop">Lake Atitlán</span><span class="arrow">→</span>
+  <span class="stop">El Paredón</span><span class="arrow">→</span>
   <span>✈️ SFO</span>
 </div>
 
 <div class="container">
 
-  <!-- BOOKING BANNER -->
-  <div class="booking-banner">
-    <div class="icon">📋</div>
-    <div>
-      <h3>Booking Tracker</h3>
-      <p>Update the status of each booking below as you confirm them. Share this page with family so everyone stays in the loop.</p>
+  <!-- FLIGHTS CARD -->
+  <div class="flight-summary">
+    <div class="flight-summary-top">
+      <h3>✈️ United Airlines — Confirmed</h3>
+      <div class="flight-confirm-badge">✓ CONFIRMED</div>
     </div>
+    <div class="flight-ref">AZTFWG</div>
+    <div class="flights-grid">
+      <div class="flight-leg">
+        <div class="flight-leg-label">Outbound · Apr 2, 2026</div>
+        <div class="flight-route">
+          <span class="flight-iata">SFO</span>
+          <span class="flight-arrow">→</span>
+          <span class="flight-iata">IAH</span>
+          <span class="flight-arrow">→</span>
+          <span class="flight-iata">GUA</span>
+        </div>
+        <div class="flight-meta">
+          <strong>UA 686</strong> · Departs 7:00 AM → IAH 1:00 PM<br>
+          <strong>UA 1632</strong> · Departs 2:42 PM → GUA 4:37 PM<br>
+          Seats: Delphine 12F · Jeremy 12E (SFO–IAH)<br>
+          Seats: Delphine 10C · Jeremy 10B (IAH–GUA)<br>
+          Economy Plus® · Boeing 737
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="flight-leg-label">Return · Apr 9, 2026</div>
+        <div class="flight-route">
+          <span class="flight-iata">GUA</span>
+          <span class="flight-arrow">→</span>
+          <span class="flight-iata">IAH</span>
+          <span class="flight-arrow">→</span>
+          <span class="flight-iata">SFO</span>
+        </div>
+        <div class="flight-meta">
+          <strong>UA 1911</strong> · Departs 3:45 PM → IAH 7:49 PM<br>
+          <strong>UA 1609</strong> · Departs 9:40 PM → SFO 11:59 PM<br>
+          Seats: Delphine 7C · Jeremy 7B (GUA–IAH)<br>
+          Seats: Delphine 12C · Jeremy 12B (IAH–SFO)<br>
+          Economy Plus® · Boeing 737 · ⚠️ Terminal change IAH
+        </div>
+      </div>
+    </div>
+    <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=✈️+Guatemala+Trip+-+SFO+to+GUA&dates=20260402T070000/20260402T163700&details=United+Airlines+AZTFWG%0AUA+686+SFO→IAH+(7:00AM-1:00PM)%0AUA+1632+IAH→GUA+(2:42PM-4:37PM)%0ASeats:+Delphine+12F/10C,+Jeremy+12E/10B&location=San+Francisco+International+Airport" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Add outbound flight to Google Calendar
+    </a>
+    &nbsp;
+    <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=✈️+Guatemala+Trip+-+GUA+to+SFO&dates=20260409T154500/20260409T235900&details=United+Airlines+AZTFWG%0AUA+1911+GUA→IAH+(3:45PM-7:49PM)%0AUA+1609+IAH→SFO+(9:40PM-11:59PM)%0ASeats:+Delphine+7C/12C,+Jeremy+7B/12B%0A⚠️+Terminal+change+at+IAH&location=Guatemala+City+Airport+(GUA)" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Add return flight to Google Calendar
+    </a>
   </div>
 
   <!-- ===== STOP 1: TIKAL ===== -->
@@ -522,16 +481,30 @@
       </div>
     </div>
 
-    <div class="hotel-card">
+    <div class="hotel-card confirmed">
       <div class="hotel-card-top">
         <div class="hotel-name"><span class="emoji">🌿</span> Jungle Lodge Hotel</div>
-        <div class="booking-status status-pending"><span class="status-dot"></span> Pending booking</div>
+        <div class="booking-status status-confirmed"><span class="status-dot"></span> Confirmed ✓</div>
       </div>
       <div class="hotel-detail">
         Inside Tikal National Park · 2-min walk to ruins entrance · Pool, restaurant, bungalows in the jungle<br>
-        📞 <a href="tel:+50278610447">+502 7861 0447</a> &nbsp;·&nbsp; 🌐 <a href="https://junglelodgetikal.com" target="_blank">junglelodgetikal.com</a> &nbsp;·&nbsp; Also on <a href="https://www.booking.com/hotel/gt/jungle-lodge-tikal.html" target="_blank">Booking.com</a>
+        📞 <a href="tel:+50223158469">+502 2315 8469</a> &nbsp;·&nbsp; 🌐 <a href="https://junglelodgetikal.com" target="_blank">junglelodgetikal.com</a>
       </div>
-      <div class="hotel-note">⚡ Note: Electricity runs on a schedule (5:30–8am · 1–3pm · 5–10pm). Totally fine for 2 nights — adds to the jungle adventure! Bring a torch for night walks.</div>
+      <div class="booking-details">
+        <div class="bd-item"><div class="bd-label">Booking Ref</div><div class="bd-value">5691735213</div></div>
+        <div class="bd-item"><div class="bd-label">PIN</div><div class="bd-value">9434 🔒</div></div>
+        <div class="bd-item"><div class="bd-label">Check-in</div><div class="bd-value">Thu Apr 2 · from 3:00 PM</div></div>
+        <div class="bd-item"><div class="bd-label">Check-out</div><div class="bd-value">Sat Apr 4 · by 11:00 AM</div></div>
+        <div class="bd-item"><div class="bd-label">Room</div><div class="bd-value">Standard Double Room</div></div>
+        <div class="bd-item"><div class="bd-label">Guests</div><div class="bd-value">Delphine + Jeremy (11)</div></div>
+        <div class="bd-item"><div class="bd-label">Total</div><div class="bd-value">$334.87</div></div>
+        <div class="bd-item"><div class="bd-label">Free cancel until</div><div class="bd-value">Mar 27, 2026</div></div>
+      </div>
+      <div class="hotel-note confirmed-note">⚡ Electricity on schedule: 5:30–8am · 1–3pm · 5–10pm. Bring a torch! No need to pre-pay but card on file. Booked via Booking.com.</div>
+      <a class="cal-btn" style="margin-top:14px;" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=🌿+Jungle+Lodge+Hotel+-+Tikal&dates=20260402/20260404&details=Booking+Ref:+5691735213%0APIN:+9434%0AStandard+Double+Room%0ADelphine+%2B+Jeremy%0ATotal:+$334.87%0APhone:+%2B502+2315+8469&location=Parque+Nacional+Tikal,+17013+Tikal,+Guatemala" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Add hotel to Google Calendar
+      </a>
     </div>
 
     <div class="days-grid">
@@ -539,22 +512,22 @@
         <div class="day-pill">Apr 2</div>
         <div class="day-content">
           <h4>Fly SFO → GUA → Flores (FRS)</h4>
-          <p>United from San Francisco, connection in Houston. Land in Flores — tiny, easy airport, out in 20 mins. Hotel shuttle to Jungle Lodge. Book sunrise tour at check-in. Rest, listen to the jungle at night. 🐒</p>
+          <p>UA 686 departs SFO 7:00 AM → Houston IAH 1:00 PM. UA 1632 departs 2:42 PM → Guatemala City GUA 4:37 PM. Hotel shuttle to Jungle Lodge (~1 hr). Book sunrise tour at check-in tonight. Listen to the jungle. 🐒</p>
         </div>
       </div>
       <div class="day-card">
         <div class="day-pill">Apr 3</div>
         <div class="day-content">
           <h4>🌅 Tikal Sunrise Tour</h4>
-          <p>Wake up at 3:30am. Enter the park at 4am before anyone else. Watch sunrise from Temple IV with howler monkeys roaring through the canopy. Spend the morning at the Great Plaza — climb temples, spot toucans and spider monkeys. Afternoon: pool and rest.</p>
-          <span class="activity-tag">🎟️ Book through hotel front desk</span>
+          <p>Wake up 3:30am. Enter the park at 4am before anyone else. Watch sunrise from Temple IV with howler monkeys roaring through the canopy. Morning at the Great Plaza — climb temples, spot toucans and spider monkeys. Afternoon: pool and rest.</p>
+          <span class="activity-tag">🎟️ Book through hotel front desk on arrival</span>
         </div>
       </div>
       <div class="day-card">
         <div class="day-pill">Apr 4</div>
         <div class="day-content">
-          <h4>Morning flight → Guatemala City → Atitlán</h4>
-          <p>Early flight from Flores back to GUA. Then private shuttle west to Lake Atitlán (~3 hrs). Arrive afternoon, settle in, first views of the volcanoes.</p>
+          <h4>Check out · Fly → Guatemala City → Atitlán</h4>
+          <p>Check out by 11am. Shuttle to Flores airport (FRS), fly to GUA. Then private shuttle west to Lake Atitlán (~3 hrs). Arrive late afternoon, first views of the volcanoes.</p>
         </div>
       </div>
     </div>
@@ -582,7 +555,7 @@
         Santa Catarina Palopó · Infinity pool facing 3 volcanoes · Restaurant on site · Tuk-tuk to Panajachel (10 min)<br>
         📞 <a href="tel:+50277622680">+502 7762 2680</a> &nbsp;·&nbsp; 🌐 <a href="http://www.tzampocresort.com" target="_blank">tzampocresort.com</a>
       </div>
-      <div class="hotel-note">💡 Call directly — they respond faster by phone than email. Last-minute so call today.</div>
+      <div class="hotel-note">💡 Call directly — they respond faster by phone. Last-minute so call today!</div>
     </div>
 
     <div class="days-grid">
@@ -590,14 +563,14 @@
         <div class="day-pill">Apr 4</div>
         <div class="day-content">
           <h4>Arrive · Settle in</h4>
-          <p>Arrive by shuttle from GUA. Check in, first swim in the infinity pool with volcano views. Dinner at the hotel restaurant.</p>
+          <p>Arrive by shuttle from GUA. First swim in the infinity pool with volcano views. Dinner at the hotel restaurant.</p>
         </div>
       </div>
       <div class="day-card">
         <div class="day-pill">Apr 5</div>
         <div class="day-content">
           <h4>🎿 Zipline at Reserva Natural Atitlán</h4>
-          <p>Book the 9am zipline tour at the nature reserve in Panajachel. 9 cables over the valley with volcano views, hanging bridges, butterfly geodome, and spider monkeys. Full morning — back to resort by early afternoon for a lazy pool day.</p>
+          <p>9am zipline tour in Panajachel. 9 cables over the valley with volcano views, hanging bridges, butterfly geodome, and spider monkeys. Back to resort early afternoon for a lazy pool day.</p>
           <span class="activity-tag">🌐 atitlanreserva.com</span>
           <span class="activity-tag">📞 +502 7762 2565</span>
         </div>
@@ -605,16 +578,16 @@
       <div class="day-card">
         <div class="day-pill">Apr 6</div>
         <div class="day-content">
-          <h4>🚤 Lake Villages by Boat with Voltan Adventures</h4>
-          <p>Private lancha tour with local Mayan guides. Visit San Juan la Laguna (weaving cooperatives, murals), San Pedro la Laguna (lunch + kayak), and Santiago Atitlán (Maximón shrine). Back to hotel by early evening.</p>
+          <h4>🚤 Lake Villages by Boat — Voltan Adventures</h4>
+          <p>Private Mayan-guided lancha tour: San Juan la Laguna (weaving cooperatives, murals), San Pedro la Laguna (lunch + kayak), Santiago Atitlán (Maximón shrine). Back by early evening.</p>
           <span class="activity-tag">🌐 voltanadventures.com</span>
         </div>
       </div>
       <div class="day-card">
         <div class="day-pill">Apr 7</div>
         <div class="day-content">
-          <h4>Morning at the resort · Shuttle to El Paredón</h4>
-          <p>Last breakfast with volcano views. Shuttle departs toward Pacific coast (~3.5 hrs). Arrive El Paredón in the afternoon — drop bags and walk straight to the beach.</p>
+          <h4>Morning at resort · Shuttle to El Paredón</h4>
+          <p>Last breakfast with volcano views. Shuttle toward Pacific coast (~3.5 hrs). Arrive El Paredón in the afternoon — drop bags and walk straight to the beach.</p>
         </div>
       </div>
     </div>
@@ -639,10 +612,10 @@
         <div class="booking-status status-pending"><span class="status-dot"></span> Pending booking</div>
       </div>
       <div class="hotel-detail">
-        Right on the beach · Surf lessons on-site · Pool · Restaurant · Beginner-friendly waves directly in front<br>
+        Right on the beach · Surf lessons on-site · Pool · Restaurant · Beginner waves directly in front<br>
         📞 <a href="tel:+50249941842">+502 4994 1842</a> &nbsp;·&nbsp; 🌐 <a href="http://www.paredonsurf.com" target="_blank">paredonsurf.com</a>
       </div>
-      <div class="hotel-note">🏄 Surf lessons are run by in-house instructors. Ask about availability at check-in or book through their website in advance. April has consistent beginner-friendly waves.</div>
+      <div class="hotel-note">🏄 Ask about surf lesson availability at check-in or book in advance. April has consistent beginner-friendly waves.</div>
     </div>
 
     <div class="days-grid">
@@ -650,22 +623,22 @@
         <div class="day-pill">Apr 7</div>
         <div class="day-content">
           <h4>Arrive · First taste of the Pacific</h4>
-          <p>Check in, walk on the black sand beach, watch the surfers, sunset with your feet in the ocean. Easy evening.</p>
+          <p>Check in, walk on the black sand beach, watch the surfers. Easy sunset evening. 🌅</p>
         </div>
       </div>
       <div class="day-card">
         <div class="day-pill">Apr 8</div>
         <div class="day-content">
           <h4>🏄 Surf Lesson + Full Beach Day</h4>
-          <p>Morning surf lesson with the in-house instructor — perfect for beginners at any age. Afternoon: hammocks, pool, waves, and a long beach walk. One last sunset dinner on the Pacific. 🌅</p>
+          <p>Morning surf lesson with in-house instructor. Afternoon: hammocks, pool, waves. Final sunset dinner on the Pacific.</p>
           <span class="activity-tag">🎒 Book at check-in</span>
         </div>
       </div>
       <div class="day-card">
         <div class="day-pill">Apr 9</div>
         <div class="day-content">
-          <h4>✈️ Shuttle to GUA · Fly home to SFO</h4>
-          <p>~2.5 hr shuttle from El Paredón to Guatemala City (GUA). Fly United GUA → Houston → SFO. Allow plenty of buffer time for the shuttle — book an early departure shuttle the night before.</p>
+          <h4>✈️ Shuttle to GUA · Fly home</h4>
+          <p>~2.5 hr shuttle from El Paredón to GUA. UA 1911 departs 3:45 PM → Houston IAH 7:49 PM. UA 1609 departs 9:40 PM → SFO 11:59 PM. ⚠️ Terminal change at IAH — allow extra time!</p>
         </div>
       </div>
     </div>
@@ -673,13 +646,13 @@
 
   <div class="divider"></div>
 
-  <!-- ACTIVITIES SECTION -->
+  <!-- ACTIVITIES -->
   <div class="section-label">Activities to Book</div>
   <div class="activities-grid">
     <div class="activity-card">
       <div class="act-icon">🌅</div>
       <h4>Tikal Sunrise Tour</h4>
-      <p>Enter the park at 4am for sunrise from Temple IV. Book directly at Jungle Lodge front desk on arrival.</p>
+      <p>Enter the park at 4am for sunrise from Temple IV. Book at Jungle Lodge front desk on arrival.</p>
       <div class="act-status status-pending"><span class="status-dot"></span> Pending</div>
     </div>
     <div class="activity-card">
@@ -692,34 +665,33 @@
     <div class="activity-card">
       <div class="act-icon">🚤</div>
       <h4>Lake Villages Tour</h4>
-      <p>Private Mayan-guided lancha tour of San Juan, San Pedro & Santiago Atitlán with Voltan Adventures.</p>
+      <p>Private Mayan-guided lancha tour with Voltan Adventures — San Juan, San Pedro, Santiago.</p>
       <a href="https://voltanadventures.com" target="_blank">→ voltanadventures.com</a>
       <div class="act-status status-pending"><span class="status-dot"></span> Pending</div>
     </div>
     <div class="activity-card">
       <div class="act-icon">🏄</div>
       <h4>Surf Lessons</h4>
-      <p>In-house instructors at Paredon Surf House. Consistent beginner-friendly waves in April. Board + lesson included.</p>
+      <p>In-house instructors at Paredon Surf House. Consistent beginner-friendly waves in April.</p>
       <a href="http://paredonsurf.com" target="_blank">→ paredonsurf.com</a>
       <div class="act-status status-pending"><span class="status-dot"></span> Pending</div>
     </div>
   </div>
 
-  <!-- BOOKING CHECKLIST -->
+  <!-- CHECKLIST -->
   <div class="checklist">
     <h2>📌 Booking Checklist</h2>
     <div class="checklist-item">
-      <div class="check-box" onclick="toggleCheck(this)"></div>
-      <div class="item-label">✈️ Flights: United SFO → GUA → FRS (Flores) <span class="urgent">⚡ Most urgent!</span></div>
+      <div class="check-box pre-checked">✓</div>
+      <div class="item-label">✈️ Flights SFO → GUA → SFO — United Airlines <span class="done">✓ Confirmed · AZTFWG</span></div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box pre-checked">✓</div>
+      <div class="item-label">🌿 Jungle Lodge Hotel, Tikal <span class="done">✓ Confirmed · Ref 5691735213</span></div>
     </div>
     <div class="checklist-item">
       <div class="check-box" onclick="toggleCheck(this)"></div>
-      <div class="item-label">🌿 Jungle Lodge Hotel, Tikal</div>
-      <div class="item-phone">+502 7861 0447</div>
-    </div>
-    <div class="checklist-item">
-      <div class="check-box" onclick="toggleCheck(this)"></div>
-      <div class="item-label">♾️ Tzampoc Resort, Lake Atitlán</div>
+      <div class="item-label">♾️ Tzampoc Resort, Lake Atitlán <span class="urgent">⚡ Call now!</span></div>
       <div class="item-phone">+502 7762 2680</div>
     </div>
     <div class="checklist-item">
@@ -739,11 +711,11 @@
     </div>
     <div class="checklist-item">
       <div class="check-box" onclick="toggleCheck(this)"></div>
-      <div class="item-label">✈️ Return flight: GUA → SFO (United via Houston)</div>
+      <div class="item-label">🌅 Tikal Sunrise Tour — book at hotel front desk on arrival</div>
     </div>
   </div>
 
-  <!-- PRACTICAL INFO -->
+  <!-- PRACTICAL -->
   <div class="practical">
     <h2>Good to Know</h2>
     <div class="practical-grid">
@@ -753,23 +725,23 @@
       </div>
       <div class="practical-item">
         <div class="p-label">Weather</div>
-        <div class="p-value">April = end of dry season. Hot & sunny. Pack sunscreen, hat, light layers for highland evenings.</div>
+        <div class="p-value">April = end of dry season. Hot & sunny. Pack sunscreen, hat, light layers for evenings.</div>
       </div>
       <div class="practical-item">
         <div class="p-label">Getting Around</div>
-        <div class="p-value">Private shuttles between destinations. Tuk-tuks locally. Lanchas (water taxis) on the lake.</div>
+        <div class="p-value">Private shuttles between destinations. Tuk-tuks locally. Lanchas on the lake.</div>
       </div>
       <div class="practical-item">
         <div class="p-label">Health</div>
-        <div class="p-value">Pack mosquito repellent (jungle + coast). Drink bottled water only. Travel insurance recommended.</div>
+        <div class="p-value">Mosquito repellent (jungle + coast). Bottled water only. Travel insurance recommended.</div>
       </div>
       <div class="practical-item">
         <div class="p-label">Language</div>
-        <div class="p-value">Spanish. Most tourist areas have English speakers. A few phrases go a long way! 🙏</div>
+        <div class="p-value">Spanish. Most tourist areas have English speakers. A few phrases go a long way!</div>
       </div>
       <div class="practical-item">
-        <div class="p-label">Flights</div>
-        <div class="p-value">United: SFO → GUA via Houston. Domestic: GUA ↔ FRS (Flores) via TAG or Avianca (~1hr).</div>
+        <div class="p-label">⚠️ IAH Warning</div>
+        <div class="p-value">Terminal change at Houston on Apr 9 return. Allow extra time between UA 1911 → UA 1609.</div>
       </div>
     </div>
   </div>
@@ -777,7 +749,7 @@
 </div>
 
 <footer>
-  Guatemala · April 2–9, 2026 &nbsp;·&nbsp; Made with love for a mum & son adventure 🌿
+  Guatemala · April 2–9, 2026 &nbsp;·&nbsp; Maman & Jeremy 🌿
 </footer>
 
 <script>
