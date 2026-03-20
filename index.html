@@ -9,7 +9,6 @@
   :root{--jade:#2d6a4f;--jl:#40916c;--jp:#d8f3dc;--gold:#c9a84c;--gl:#f0d080;--sand:#f5f0e8;--bark:#3d2b1f;--mist:#e8f4f0;--coral:#e07a5f;--white:#fdfcfa;--cb:#eaf5ef;--cc:#2d6a4f;--cborder:#b7dfc9;}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'DM Sans',sans-serif;background:var(--sand);color:var(--bark);min-height:100vh;}
-
   .hero{background:var(--jade);color:var(--white);padding:60px 40px 50px;position:relative;overflow:hidden;}
   .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:340px;height:340px;background:radial-gradient(circle,rgba(201,168,76,.18) 0%,transparent 70%);border-radius:50%;}
   .hero::after{content:'';position:absolute;bottom:-80px;left:30%;width:260px;height:260px;background:radial-gradient(circle,rgba(116,192,189,.14) 0%,transparent 70%);border-radius:50%;}
@@ -18,19 +17,17 @@
   .hero h1 em{font-style:italic;color:var(--gl);}
   .hsub{font-size:15px;font-weight:300;opacity:.82;margin-top:8px;}
   .hdates{display:inline-block;margin-top:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:40px;padding:8px 20px;font-size:13px;font-weight:500;}
-
   .rstrip{background:var(--bark);color:var(--white);padding:14px 40px;display:flex;align-items:center;gap:10px;font-size:13px;flex-wrap:wrap;}
   .rstrip .stop{color:var(--gl);font-weight:500;}
   .rstrip .arr{opacity:.4;}
-
   .tabs{background:#2a1f16;display:flex;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;}
-  .tbtn{padding:13px 18px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.55);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+  .tbtn{padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.55);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
   .tbtn.active{color:var(--gl);border-bottom-color:var(--gl);}
   .tbtn:hover{color:white;}
   .tc{display:none;}.tc.active{display:block;}
-
   .con{max-width:860px;margin:0 auto;padding:40px 24px 80px;}
   .calwrap{max-width:900px;margin:0 auto;padding:32px 24px 80px;}
+  .mapwrap{max-width:900px;margin:0 auto;padding:32px 24px 80px;}
 
   .fc{background:var(--bark);color:var(--white);border-radius:16px;padding:24px 26px;margin-bottom:20px;}
   .ft{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
@@ -50,14 +47,12 @@
   .gcb{display:inline-flex;align-items:center;gap:8px;margin-top:14px;margin-right:8px;background:var(--gold);color:var(--bark);border:none;border-radius:8px;padding:9px 16px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .15s;}
   .gcb:hover{background:var(--gl);}
   .gcb svg{width:14px;height:14px;}
-
   .slabel{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--jl);font-weight:500;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid var(--jp);}
   .dest{margin-bottom:48px;}
   .dh{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
   .dnum{width:44px;height:44px;min-width:44px;background:var(--jade);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-style:italic;margin-top:2px;}
   .dtitle h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.15;}
   .dmeta{font-size:12px;color:var(--jl);font-weight:500;margin-top:3px;}
-
   .hc{background:var(--white);border-radius:14px;border:1.5px solid #e5ede9;padding:20px 22px;margin-bottom:12px;transition:box-shadow .2s;}
   .hc:hover{box-shadow:0 4px 20px rgba(45,106,79,.1);}
   .hc.conf{border-color:var(--cborder);border-left:4px solid var(--jade);}
@@ -75,14 +70,12 @@
   .bd{margin-top:12px;background:#f7fbf9;border:1px solid var(--cborder);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}
   .bdl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--jl);margin-bottom:3px;}
   .bdv{font-size:13px;font-weight:500;color:var(--bark);}
-
   .days{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
   .dc{background:var(--white);border-radius:12px;border:1.5px solid #e5ede9;padding:16px 20px;display:flex;gap:16px;align-items:flex-start;}
   .dp{background:var(--jp);color:var(--jade);font-size:11px;font-weight:600;letter-spacing:.5px;padding:4px 10px;border-radius:20px;white-space:nowrap;margin-top:2px;}
   .dcc h4{font-size:14px;font-weight:500;margin-bottom:4px;}
   .dcc p{font-size:12.5px;color:#666;line-height:1.55;}
   .at{display:inline-block;background:#f5f0e8;border:1px solid #e0d8c8;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:500;color:var(--bark);margin-top:6px;margin-right:4px;}
-
   .ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:8px;}
   .ac{background:var(--white);border-radius:12px;border:1.5px solid #e5ede9;padding:16px 18px;}
   .ac .ai{font-size:24px;margin-bottom:8px;}
@@ -90,7 +83,6 @@
   .ac p{font-size:12px;color:#666;line-height:1.5;}
   .ac a{color:var(--jl);font-size:12px;font-weight:500;text-decoration:none;display:block;margin-top:8px;}
   .ast{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:500;margin-top:10px;}
-
   .cl{background:var(--white);border-radius:14px;border:1.5px solid #e5ede9;padding:24px;margin-top:40px;}
   .cl h2{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:18px;}
   .cli{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0ece4;font-size:13.5px;}
@@ -101,14 +93,12 @@
   .urg{color:var(--coral);font-weight:500;font-size:11px;margin-left:6px;}
   .ok{color:var(--jade);font-weight:500;font-size:11px;margin-left:6px;}
   .iph{font-size:12px;color:var(--jl);font-weight:500;}
-
   .prac{background:var(--bark);color:var(--white);border-radius:16px;padding:28px;margin-top:48px;}
   .prac h2{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:20px;color:var(--gl);}
   .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
   .pi{padding:14px 16px;background:rgba(255,255,255,.07);border-radius:10px;}
   .pil{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:6px;}
   .piv{font-size:14px;line-height:1.5;}
-
   .div{height:1px;background:linear-gradient(90deg,transparent,#d0e8dc,transparent);margin:40px 0;}
   footer{text-align:center;padding:30px;font-size:12px;color:#aaa;border-top:1px solid #e8e0d4;}
 
@@ -143,6 +133,9 @@
   .wtip-hot{background:#fff8e6;color:#7a5500;border-left:3px solid var(--gold);}
   .wtip-cool{background:var(--mist);color:var(--jade);border-left:3px solid var(--jade);}
   .wforecast-note{margin-top:20px;padding:14px 18px;background:#f7fbf9;border:1px solid var(--cborder);border-radius:10px;font-size:13px;color:var(--jade);line-height:1.6;}
+  .mosq-box{margin-top:20px;background:#fff3f3;border:1.5px solid #f7c5c5;border-left:4px solid var(--coral);border-radius:12px;padding:16px 20px;}
+  .mosq-box h3{font-size:15px;font-weight:600;color:#c0392b;margin-bottom:8px;}
+  .mosq-box p{font-size:13px;line-height:1.6;color:#555;}
 
   /* PACKING */
   .pack-intro{font-size:14px;color:#666;margin-bottom:28px;line-height:1.6;}
@@ -152,11 +145,14 @@
   .pack-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:var(--white);border-radius:10px;border:1.5px solid #e8ede9;cursor:pointer;transition:all .15s;}
   .pack-item:hover{border-color:var(--cborder);}
   .pack-item.packed{background:var(--cb);border-color:var(--cborder);}
+  .pack-item.essential{border-color:#fde68a;background:#fffdf5;}
+  .pack-item.essential.packed{background:var(--cb);border-color:var(--cborder);}
   .pack-cb{width:18px;height:18px;min-width:18px;border:2px solid #ccc;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .15s;margin-top:1px;}
   .pack-item.packed .pack-cb{background:var(--jade);border-color:var(--jade);color:white;}
   .pack-text{font-size:13px;line-height:1.4;}
   .pack-text .sub{font-size:11px;color:#888;display:block;margin-top:2px;}
   .pack-item.packed .pack-text{color:var(--jade);}
+  .essential-tag{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:#fde68a;color:#7a5500;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle;}
   .pack-counter{font-size:13px;color:#888;margin-top:16px;text-align:right;}
 
   /* CALENDAR */
@@ -182,13 +178,24 @@
   .csv{font-size:14px;font-weight:500;}
   .csm{font-size:12px;color:#888;margin-top:4px;}
 
+  /* MAP */
+  .map-embed{width:100%;height:520px;border:none;border-radius:16px;margin-bottom:24px;}
+  .map-legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:4px;}
+  .ml-card{background:var(--white);border-radius:12px;border:1.5px solid #e5ede9;padding:14px 16px;}
+  .ml-num{display:inline-flex;width:26px;height:26px;min-width:26px;background:var(--jade);color:var(--white);border-radius:50%;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-bottom:8px;}
+  .ml-name{font-size:13px;font-weight:600;margin-bottom:3px;}
+  .ml-detail{font-size:11px;color:#888;line-height:1.5;}
+  .ml-link{font-size:11px;color:var(--jl);font-weight:500;text-decoration:none;display:block;margin-top:6px;}
+
   @media(max-width:600px){
     .hero{padding:40px 20px 36px;}.rstrip{padding:12px 20px;}
-    .con,.calwrap{padding:24px 14px 60px;}
+    .con,.calwrap,.mapwrap{padding:24px 14px 60px;}
     .tbtn{padding:12px 10px;font-size:11px;}
     .ag{grid-template-columns:1fr;}.pg{grid-template-columns:1fr 1fr;}
     .cd{min-height:64px;padding:5px 4px;}.cev{font-size:8px;padding:1px 3px;}.cdn{font-size:11px;}
     .pack-grid{grid-template-columns:1fr;}
+    .map-embed{height:380px;}
+    .map-legend{grid-template-columns:1fr 1fr;}
   }
 </style>
 </head>
@@ -212,6 +219,7 @@
 
 <div class="tabs">
   <button class="tbtn active" onclick="switchTab('itin',this)">📋 Itinerary</button>
+  <button class="tbtn" onclick="switchTab('map',this)">🗺️ Map</button>
   <button class="tbtn" onclick="switchTab('cal',this)">📅 Calendar</button>
   <button class="tbtn" onclick="switchTab('weather',this)">🌤️ Weather</button>
   <button class="tbtn" onclick="switchTab('pack',this)">🎒 Packing</button>
@@ -275,11 +283,11 @@
         <div><div class="bdl">Room</div><div class="bdv">Standard Double</div></div>
         <div><div class="bdl">Total</div><div class="bdv">$334.87</div></div>
       </div>
-      <div class="hn2 cn">⚡ Electricity schedule: 5:30–8am · 1–3pm · 5–10pm. Bring a torch! Free cancel until Mar 27.</div>
+      <div class="hn2 cn">⚡ Electricity schedule: 5:30–8am · 1–3pm · 5–10pm. <strong>Bring a torch/flashlight!</strong> Free cancel until Mar 27.</div>
       <a class="gcb" style="margin-top:12px" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=🌿+Jungle+Lodge+Tikal&dates=20260402/20260404&details=Ref:5691735213+PIN:9434%0A$334.87" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Add to Google Calendar</a>
     </div>
     <div class="days">
-      <div class="dc"><div class="dp">Apr 2</div><div class="dcc"><h4>Fly SFO → GUA → Flores (3 flights!)</h4><p>UA 686 SFO 7:00am → IAH · UA 1632 2:42pm → GUA 4:37pm · ⚠️ ~2hrs to clear customs · TAG 5U2120 6:50pm → Flores · Hotel shuttle to Jungle Lodge.</p></div></div>
+      <div class="dc"><div class="dp">Apr 2</div><div class="dcc"><h4>Fly SFO → GUA → Flores (3 flights!)</h4><p>UA 686 SFO 7:00am → IAH · UA 1632 2:42pm → GUA 4:37pm · ⚠️ ~2hrs to clear customs · TAG 5U2120 6:50pm → Flores · Shuttle to Jungle Lodge.</p></div></div>
       <div class="dc"><div class="dp">Apr 3</div><div class="dcc"><h4>🌅 Tikal Sunrise Tour</h4><p>Wake 3:30am. Enter park 4am. Sunrise from Temple IV with howler monkeys. Great Plaza — climb temples, spot toucans and spider monkeys. Afternoon: pool and rest.</p><span class="at">🎟️ Book at hotel front desk on arrival</span></div></div>
       <div class="dc"><div class="dp">Apr 4</div><div class="dcc"><h4>Check out · Fly FRS→GUA · Transfer to Atitlán</h4><p>Check out by 11am. TAG 5U141 10:40am → GUA 11:40am. Private transfer (~3hrs) to Lake Atitlán. Lancha to Santa Cruz. Check in from 3PM.</p></div></div>
     </div>
@@ -290,22 +298,20 @@
   <div class="dest">
     <div class="slabel">Stop 02 · Apr 4–9 · 5 nights · Laguna Lodge Eco-Resort</div>
     <div class="dh"><div class="dnum">2</div><div class="dtitle"><h2>Lake Atitlán</h2><div class="dmeta">🌋 3 volcanoes · Maya villages · Santa Cruz La Laguna · Accessible by boat only</div></div></div>
-
     <div class="hc conf">
       <div class="hct"><div class="hn">🌊 Laguna Lodge · Booking 1 (Apr 4–6)</div><div class="badge bc"><span class="bdot"></span>Confirmed ✓</div></div>
-      <div class="hd">Booked via Expedia · Superior Double or Twin Room · Non-refundable<br>📞 <a href="tel:+50240668135">+502 4066 8135</a> · 🌐 <a href="https://www.thelagunalodge.com" target="_blank">thelagunalodge.com</a></div>
+      <div class="hd">Booked via Expedia · Superior Double or Twin · Non-refundable<br>📞 <a href="tel:+50240668135">+502 4066 8135</a> · 🌐 <a href="https://thelagunalodge.com" target="_blank">thelagunalodge.com</a></div>
       <div class="bd">
         <div><div class="bdl">Expedia Ref</div><div class="bdv">73400367131028</div></div>
         <div><div class="bdl">Check-in</div><div class="bdv">Sat Apr 4 · from 3PM</div></div>
         <div><div class="bdl">Check-out</div><div class="bdv">Mon Apr 6 · noon</div></div>
         <div><div class="bdl">Total</div><div class="bdv">$682.83</div></div>
       </div>
-      <div class="hn2 warn2">🚤 Boat access only — lancha from Panajachel dock to Santa Cruz La Laguna. ⚠️ Non-refundable.</div>
+      <div class="hn2 warn2">🚤 Boat access only — lancha from Panajachel to Santa Cruz La Laguna. ⚠️ Non-refundable.</div>
     </div>
-
     <div class="hc conf">
       <div class="hct"><div class="hn">🌊 Laguna Lodge · Booking 2 (Apr 6–9)</div><div class="badge bc"><span class="bdot"></span>Confirmed ✓</div></div>
-      <div class="hd">Booked directly · Ceiba Suite · Includes private shuttle to GUA airport on Apr 9 🚐</div>
+      <div class="hd">Booked directly · Ceiba Suite · Includes private shuttle to GUA airport Apr 9 🚐<br>📞 <a href="tel:+50240668135">+502 4066 8135</a> · 🌐 <a href="https://thelagunalodge.com" target="_blank">thelagunalodge.com</a></div>
       <div class="bd">
         <div><div class="bdl">Booking Ref</div><div class="bdv">219187</div></div>
         <div><div class="bdl">Check-in</div><div class="bdv">Mon Apr 6 · from 3PM</div></div>
@@ -314,17 +320,16 @@
         <div><div class="bdl">Shuttle incl.</div><div class="bdv">🚐 → GUA airport</div></div>
         <div><div class="bdl">Total</div><div class="bdv">$1,136.60</div></div>
       </div>
-      <div class="hn2 cn">✅ Pool, infinity views, kayaks, spa & hot tub all on site. Breakfast + 4-course vegetarian dinner included. Mornings are best for water activities — afternoon Xocomil wind makes the lake choppy.</div>
-      <a class="gcb" style="margin-top:12px" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=🌊+Laguna+Lodge+Atitlan&dates=20260404/20260409&details=Apr4-6:Expedia+73400367131028+$682.83%0AApr6-9:Ref+219187+Ceiba+Suite+$1136.60%0A🚐Shuttle+to+GUA+Apr9" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Add full stay to Google Calendar</a>
+      <div class="hn2 cn">✅ Infinity pool · Lake swimming + snorkels · Kayaks · Spa & hot tub · Breakfast + 4-course vegetarian dinner included. Go on the water before noon — afternoon Xocomil wind makes lake choppy.</div>
+      <a class="gcb" style="margin-top:12px" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=🌊+Laguna+Lodge+Atitlan&dates=20260404/20260409&details=Apr4-6:Expedia+73400367131028%0AApr6-9:Ref+219187+Ceiba+Suite+shuttle+incl." target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Add full stay to Google Calendar</a>
     </div>
-
     <div class="days">
-      <div class="dc"><div class="dp">Apr 4</div><div class="dcc"><h4>Arrive · Lancha to Santa Cruz · Settle in</h4><p>Private transfer from GUA to Panajachel (~3hrs). Lancha to Santa Cruz La Laguna. Check in from 3PM. First sunset over the three volcanoes. 🌋</p></div></div>
-      <div class="dc"><div class="dp">Apr 5</div><div class="dcc"><h4>🎿 Zipline at Reserva Natural Atitlán</h4><p>Book the 9am tour in Panajachel — 9 cables over the valley, butterfly geodome, hanging bridges and spider monkeys. Peaceful afternoon back at the lodge.</p><span class="at">atitlanreserva.com · +502 7762 2565</span></div></div>
-      <div class="dc"><div class="dp">Apr 6</div><div class="dcc"><h4>🚤 Lake Villages · Move to Ceiba Suite</h4><p>Morning lancha tour with Voltan Adventures: San Juan la Laguna (murals, weaving) and San Pedro (kayak). Check into the upgraded Ceiba Suite from 3PM. 🎉</p><span class="at">voltanadventures.com</span></div></div>
-      <div class="dc"><div class="dp">Apr 7</div><div class="dcc"><h4>🛶 Free day — pool, kayak or hike</h4><p>Borrow a kayak, swim in the infinity pool, explore the nature reserve, or do yoga. Mornings are calm — get on the water before noon.</p></div></div>
-      <div class="dc"><div class="dp">Apr 8</div><div class="dcc"><h4>🏘️ Santiago Atitlán + Maximón shrine</h4><p>Lancha to Santiago Atitlán — visit the famous Maximón shrine, browse the local market. Last evening watching the volcanoes at sunset. 🌅</p></div></div>
-      <div class="dc"><div class="dp">Apr 9</div><div class="dcc"><h4>✈️ Private shuttle → GUA → SFO</h4><p>🚐 Private shuttle included. UA 1911 departs GUA 3:45PM → IAH. UA 1609 IAH 9:40PM → SFO 11:59PM. ⚠️ Terminal change at IAH!</p></div></div>
+      <div class="dc"><div class="dp">Apr 4</div><div class="dcc"><h4>Arrive · Lancha to Santa Cruz · Settle in</h4><p>Private transfer GUA → Panajachel (~3hrs). Lancha to Santa Cruz La Laguna. Check in from 3PM. First sunset over the volcanoes. 🌋</p></div></div>
+      <div class="dc"><div class="dp">Apr 5</div><div class="dcc"><h4>🎿 Zipline at Reserva Natural Atitlán</h4><p>9am zipline tour — 9 cables, butterfly geodome, hanging bridges, spider monkeys. Peaceful afternoon at the lodge.</p><span class="at">atitlanreserva.com · +502 7762 2565</span></div></div>
+      <div class="dc"><div class="dp">Apr 6</div><div class="dcc"><h4>🚤 Lake Villages · Move to Ceiba Suite</h4><p>Morning lancha with Voltan Adventures: San Juan la Laguna (murals, weaving) and San Pedro (kayak). Check into Ceiba Suite from 3PM. 🎉</p><span class="at">voltanadventures.com</span></div></div>
+      <div class="dc"><div class="dp">Apr 7</div><div class="dcc"><h4>🛶 Free day — pool, kayak, or hike</h4><p>Borrow a kayak, swim in the infinity pool, hike the nature reserve, or do yoga. Mornings are calm — get on the water before noon.</p></div></div>
+      <div class="dc"><div class="dp">Apr 8</div><div class="dcc"><h4>🏘️ Santiago Atitlán + Maximón shrine</h4><p>Lancha to Santiago Atitlán. Visit the famous Maximón shrine, browse the market. Last evening watching the volcanoes. 🌅</p></div></div>
+      <div class="dc"><div class="dp">Apr 9</div><div class="dcc"><h4>✈️ Private shuttle → GUA → SFO</h4><p>🚐 Private shuttle included. UA 1911 GUA 3:45PM → IAH. UA 1609 9:40PM → SFO 11:59PM. ⚠️ Terminal change at IAH!</p></div></div>
     </div>
   </div>
 
@@ -343,7 +348,7 @@
     <div class="cli"><div class="chk on">✓</div><div class="ill">✈️ United Airlines SFO ↔ GUA <span class="ok">✓ AZTFWG</span></div></div>
     <div class="cli"><div class="chk on">✓</div><div class="ill">✈️ TAG Airlines GUA ↔ Flores <span class="ok">✓ 40-916685550</span></div></div>
     <div class="cli"><div class="chk on">✓</div><div class="ill">🌿 Jungle Lodge Hotel, Tikal <span class="ok">✓ 5691735213</span></div></div>
-    <div class="cli"><div class="chk on">✓</div><div class="ill">🌊 Laguna Lodge Apr 4–6 (Superior Double) <span class="ok">✓ Expedia 73400367131028</span></div></div>
+    <div class="cli"><div class="chk on">✓</div><div class="ill">🌊 Laguna Lodge Apr 4–6 <span class="ok">✓ Expedia 73400367131028</span></div></div>
     <div class="cli"><div class="chk on">✓</div><div class="ill">🌊 Laguna Lodge Apr 6–9 (Ceiba Suite + shuttle) <span class="ok">✓ Ref 219187</span></div></div>
     <div class="cli"><div class="chk" onclick="toggleCheck(this)"></div><div class="ill">🚐 Private transfer GUA → Panajachel (Apr 4)</div><div class="iph">alf.transport@yahoo.com</div></div>
     <div class="cli"><div class="chk" onclick="toggleCheck(this)"></div><div class="ill">🚤 Confirm lancha Panajachel → Santa Cruz (Apr 4)</div><div class="iph">info@thelagunalodge.com</div></div>
@@ -355,14 +360,55 @@
     <h2>Good to Know</h2>
     <div class="pg">
       <div class="pi"><div class="pil">Currency</div><div class="piv">Guatemalan Quetzal (GTQ). Carry cash — many places don't take cards.</div></div>
-      <div class="pi"><div class="pil">Getting Around</div><div class="piv">Private shuttle from GUA. Lanchas on the lake. Tuk-tuks in Panajachel.</div></div>
-      <div class="pi"><div class="pil">Swimming</div><div class="piv">Laguna Lodge has an infinity pool + lake swimming with snorkels. Kayaks to borrow. Go before noon — afternoon wind makes lake choppy.</div></div>
-      <div class="pi"><div class="pil">Food</div><div class="piv">Laguna Lodge serves breakfast + 4-course vegetarian dinner. Restaurant on site. Eat meat in nearby villages.</div></div>
-      <div class="pi"><div class="pil">⚠️ Apr 2 Connection</div><div class="piv">Only ~2hrs between UA arrival (4:37pm) and TAG departure (6:50pm). Move fast through customs!</div></div>
-      <div class="pi"><div class="pil">⚠️ Apr 9 IAH</div><div class="piv">Terminal change at Houston IAH on return. Allow extra time between UA 1911 → UA 1609.</div></div>
+      <div class="pi"><div class="pil">Getting Around</div><div class="piv">Private shuttle GUA → Panajachel. Lanchas on the lake. Private shuttle back included.</div></div>
+      <div class="pi"><div class="pil">Swimming</div><div class="piv">Infinity pool + lake swimming with snorkels at Laguna Lodge. Kayaks available. Go before noon.</div></div>
+      <div class="pi"><div class="pil">Food at Lodge</div><div class="piv">Breakfast + 4-course vegetarian dinner included. Eat meat in nearby villages.</div></div>
+      <div class="pi"><div class="pil">⚠️ Apr 2 Connection</div><div class="piv">Only ~2hrs GUA between UA (4:37pm) and TAG (6:50pm). Move fast!</div></div>
+      <div class="pi"><div class="pil">⚠️ Apr 9 IAH</div><div class="piv">Terminal change at Houston on return. Allow time UA 1911 → UA 1609.</div></div>
     </div>
   </div>
+</div>
+</div>
 
+<!-- ====== MAP ====== -->
+<div id="tab-map" class="tc">
+<div class="mapwrap">
+  <div class="slabel" style="margin-bottom:20px;">Full Trip · 2 Destinations · 7 Nights</div>
+  <iframe class="map-embed"
+    src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD-9tSrke72PouQMnMX-a17X55nw-beomk&origin=17.2257164,-89.6143848&destination=14.7403759,-91.1970856&waypoints=14.751408,-91.165959|14.6945888,-91.2878998|14.642446899,-91.22775560&mode=driving"
+    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <div class="map-legend">
+    <div class="ml-card">
+      <div class="ml-num">1</div>
+      <div class="ml-name">🌿 Jungle Lodge — Tikal</div>
+      <div class="ml-detail">Apr 2–4 · 2 nights<br>Inside Tikal National Park<br>Ref: 5691735213</div>
+      <a href="https://junglelodgetikal.com" target="_blank" class="ml-link">→ junglelodgetikal.com</a>
+    </div>
+    <div class="ml-card">
+      <div class="ml-num">2</div>
+      <div class="ml-name">🌊 Laguna Lodge — Atitlán</div>
+      <div class="ml-detail">Apr 4–9 · 5 nights<br>Santa Cruz La Laguna<br>Refs: 73400367131028 · 219187</div>
+      <a href="https://thelagunalodge.com" target="_blank" class="ml-link">→ thelagunalodge.com</a>
+    </div>
+    <div class="ml-card">
+      <div class="ml-num">3</div>
+      <div class="ml-name">🎿 Reserva Natural Atitlán</div>
+      <div class="ml-detail">Apr 5 · Zipline tour 9am<br>Panajachel<br>9 cables · Butterfly dome</div>
+      <a href="http://atitlanreserva.com" target="_blank" class="ml-link">→ atitlanreserva.com</a>
+    </div>
+    <div class="ml-card">
+      <div class="ml-num">4</div>
+      <div class="ml-name">🚤 San Juan La Laguna</div>
+      <div class="ml-detail">Apr 6 · Voltan Adventures<br>Weaving cooperatives<br>Colourful village murals</div>
+      <a href="https://voltanadventures.com" target="_blank" class="ml-link">→ voltanadventures.com</a>
+    </div>
+    <div class="ml-card">
+      <div class="ml-num">5</div>
+      <div class="ml-name">🏘️ Santiago Atitlán</div>
+      <div class="ml-detail">Apr 8 · Lancha day trip<br>Maximón shrine<br>Local market</div>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -372,71 +418,18 @@
   <div class="cmon">April 2026</div>
   <div class="cgrid">
     <div class="cdh">Sun</div><div class="cdh">Mon</div><div class="cdh">Tue</div><div class="cdh">Wed</div><div class="cdh">Thu</div><div class="cdh">Fri</div><div class="cdh">Sat</div>
-    <div class="cd om"><div class="cdn">29</div></div>
-    <div class="cd om"><div class="cdn">30</div></div>
-    <div class="cd om"><div class="cdn">31</div></div>
-    <div class="cd"><div class="cdn">1</div></div>
-    <div class="cd" style="background:#f0fdf4;border-color:#bbf7d0;">
-      <div class="cdn" style="color:var(--jade);">2 🛫</div>
-      <div class="cev ef">UA686 SFO→IAH 7am</div>
-      <div class="cev ef">UA1632 IAH→GUA 2:42p</div>
-      <div class="cev ef">5U2120 GUA→FRS 6:50p</div>
-      <div class="cev eh">🌿 Jungle Lodge in</div>
-      <div class="cev ew">🌡️ ~32°C / 25°C</div>
-    </div>
-    <div class="cd" style="background:#f0fdf4;border-color:#bbf7d0;">
-      <div class="cdn">3</div>
-      <div class="cev eh">🌿 Tikal</div>
-      <div class="cev ea">🌅 Sunrise 4am</div>
-      <div class="cev ea">🏛️ Ruins & jungle</div>
-      <div class="cev ew">☀️ ~32°C humid</div>
-    </div>
-    <div class="cd" style="background:#f0fdf4;border-color:#bbf7d0;">
-      <div class="cdn">4</div>
-      <div class="cev eh">Jungle Lodge out 11am</div>
-      <div class="cev ef">5U141 FRS→GUA 10:40a</div>
-      <div class="cev et">🚐 Transfer → Atitlán</div>
-      <div class="cev eh">🌊 Laguna Lodge in</div>
-    </div>
-    <div class="cd" style="background:#fffbeb;border-color:#fde68a;">
-      <div class="cdn">5</div>
-      <div class="cev eh">🌊 Lake Atitlán</div>
-      <div class="cev ea">🎿 Zipline 9am</div>
-      <div class="cev ew">🌤️ ~22°C / 15°C</div>
-    </div>
-    <div class="cd" style="background:#fffbeb;border-color:#fde68a;">
-      <div class="cdn">6</div>
-      <div class="cev eh">🌊 → Ceiba Suite</div>
-      <div class="cev ea">🚤 Village lancha</div>
-      <div class="cev ew">🌤️ ~22°C</div>
-    </div>
-    <div class="cd" style="background:#fffbeb;border-color:#fde68a;">
-      <div class="cdn">7</div>
-      <div class="cev eh">🌊 Lake Atitlán</div>
-      <div class="cev ea">🛶 Free day</div>
-      <div class="cev ew">☀️ ~23°C</div>
-    </div>
-    <div class="cd" style="background:#fffbeb;border-color:#fde68a;">
-      <div class="cdn">8</div>
-      <div class="cev eh">🌊 Lake Atitlán</div>
-      <div class="cev ea">🏘️ Santiago Atitlán</div>
-      <div class="cev ew">☀️ ~23°C</div>
-    </div>
-    <div class="cd" style="background:#fffbeb;border-color:#fde68a;">
-      <div class="cdn">9 🛫</div>
-      <div class="cev et">🚐 Private shuttle→GUA</div>
-      <div class="cev ef">UA1911 3:45p</div>
-      <div class="cev ef">UA1609 9:40p→SFO</div>
-    </div>
+    <div class="cd om"><div class="cdn">29</div></div><div class="cd om"><div class="cdn">30</div></div><div class="cd om"><div class="cdn">31</div></div><div class="cd"><div class="cdn">1</div></div>
+    <div class="cd" style="background:#f0fdf4;border-color:#bbf7d0;"><div class="cdn" style="color:var(--jade);">2 🛫</div><div class="cev ef">UA686 SFO→IAH 7am</div><div class="cev ef">UA1632 IAH→GUA 2:42p</div><div class="cev ef">5U2120 GUA→FRS 6:50p</div><div class="cev eh">🌿 Jungle Lodge in</div><div class="cev ew">🌡️ 31–33°C / 22°C</div></div>
+    <div class="cd" style="background:#f0fdf4;border-color:#bbf7d0;"><div class="cdn">3</div><div class="cev eh">🌿 Tikal</div><div class="cev ea">🌅 Sunrise 4am</div><div class="cev ea">🏛️ Ruins & jungle</div><div class="cev ew">☀️ ~32°C humid</div></div>
+    <div class="cd" style="background:#f0fdf4;border-color:#bbf7d0;"><div class="cdn">4</div><div class="cev eh">Jungle Lodge out 11am</div><div class="cev ef">5U141 FRS→GUA 10:40a</div><div class="cev et">🚐 Transfer → Atitlán</div><div class="cev eh">🌊 Laguna Lodge in</div></div>
+    <div class="cd" style="background:#fffbeb;border-color:#fde68a;"><div class="cdn">5</div><div class="cev eh">🌊 Atitlán</div><div class="cev ea">🎿 Zipline 9am</div><div class="cev ew">🌤️ 22–24°C / 15°C</div></div>
+    <div class="cd" style="background:#fffbeb;border-color:#fde68a;"><div class="cdn">6</div><div class="cev eh">🌊 → Ceiba Suite</div><div class="cev ea">🚤 Village lancha</div><div class="cev ew">🌤️ ~22°C</div></div>
+    <div class="cd" style="background:#fffbeb;border-color:#fde68a;"><div class="cdn">7</div><div class="cev eh">🌊 Atitlán</div><div class="cev ea">🛶 Free day</div><div class="cev ew">☀️ ~23°C</div></div>
+    <div class="cd" style="background:#fffbeb;border-color:#fde68a;"><div class="cdn">8</div><div class="cev eh">🌊 Atitlán</div><div class="cev ea">🏘️ Santiago Atitlán</div><div class="cev ew">☀️ ~23°C</div></div>
+    <div class="cd" style="background:#fffbeb;border-color:#fde68a;"><div class="cdn">9 🛫</div><div class="cev et">🚐 Private shuttle→GUA</div><div class="cev ef">UA1911 3:45p→IAH</div><div class="cev ef">UA1609 9:40p→SFO</div></div>
     <div class="cd"><div class="cdn">10</div><div class="cev ef" style="font-size:8px;">🏠 SFO 11:59pm</div></div>
     <div class="cd"><div class="cdn">11</div></div>
-    <div class="cd"><div class="cdn">12</div></div>
-    <div class="cd"><div class="cdn">13</div></div>
-    <div class="cd"><div class="cdn">14</div></div>
-    <div class="cd"><div class="cdn">15</div></div>
-    <div class="cd"><div class="cdn">16</div></div>
-    <div class="cd"><div class="cdn">17</div></div>
-    <div class="cd"><div class="cdn">18</div></div>
+    <div class="cd"><div class="cdn">12</div></div><div class="cd"><div class="cdn">13</div></div><div class="cd"><div class="cdn">14</div></div><div class="cd"><div class="cdn">15</div></div><div class="cd"><div class="cdn">16</div></div><div class="cd"><div class="cdn">17</div></div><div class="cd"><div class="cdn">18</div></div>
   </div>
   <div class="cleg">
     <div class="cll"><div class="cld" style="background:#dbeafe;"></div>Flights</div>
@@ -457,125 +450,84 @@
 <!-- ====== WEATHER ====== -->
 <div id="tab-weather" class="tc">
 <div class="con">
-  <div class="slabel" style="margin-bottom:24px;">Typical April Weather · Updated forecasts available ~7 days before travel</div>
+  <div class="slabel" style="margin-bottom:24px;">Typical April Weather · Live forecasts available ~7 days before travel</div>
 
-  <div class="weather-grid">
+  <div class="mosq-box">
+    <h3>🦟 Mosquito Repellent — Yes, Essential!</h3>
+    <p><strong>Tikal (Apr 2–4):</strong> Absolutely bring DEET-based repellent. The jungle at dawn for the 4am sunrise tour is prime mosquito territory — dark, humid, still. Long sleeves + repellent are a must for that morning.<br><br>
+    <strong>Lake Atitlán (Apr 4–9):</strong> Much lower risk at 1,565m altitude — mosquitoes are minimal. Still worth having the repellent in your bag just in case, especially for evening boat rides.<br><br>
+    <strong>Recommended:</strong> DEET 30–50% for Tikal. Spray clothes as well as skin. Bring enough for both of you for the whole trip.</p>
+  </div>
 
-    <!-- TIKAL -->
+  <div class="weather-grid" style="margin-top:24px;">
     <div class="wcard">
-      <div class="wcard-header">
-        <div class="wcard-icon">🌿</div>
-        <div>
-          <div class="wcard-title">Tikal</div>
-          <div class="wcard-dates">Apr 2–4 · Petén jungle · 200m altitude</div>
-        </div>
-      </div>
+      <div class="wcard-header"><div class="wcard-icon">🌿</div><div><div class="wcard-title">Tikal</div><div class="wcard-dates">Apr 2–4 · Petén jungle · 200m altitude</div></div></div>
       <div class="wcard-body">
-        <div class="wtemp-row">
-          <div class="wtemp-label">☀️ Daytime high</div>
-          <div class="wtemp-val"><span class="wtemp-num">31–33°C</span><span class="wtemp-note">~88–91°F</span></div>
-        </div>
+        <div class="wtemp-row"><div class="wtemp-label">☀️ Daytime high</div><div class="wtemp-val"><span class="wtemp-num">31–33°C</span><span class="wtemp-note">~88–91°F</span></div></div>
         <div style="padding:2px 0 8px;"><div class="wbar wbar-hot" style="width:90%;"></div></div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">🌙 Night low</div>
-          <div class="wtemp-val"><span class="wtemp-num">22–24°C</span><span class="wtemp-note">~72–75°F</span></div>
-        </div>
+        <div class="wtemp-row"><div class="wtemp-label">🌙 Night low</div><div class="wtemp-val"><span class="wtemp-num">22–24°C</span><span class="wtemp-note">~72–75°F</span></div></div>
         <div style="padding:2px 0 8px;"><div class="wbar wbar-hot" style="width:55%;"></div></div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">💧 Humidity</div>
-          <div class="wtemp-val"><span class="wtemp-num">High</span><span class="wtemp-note">tropical jungle</span></div>
-        </div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">🌧️ Rain chance</div>
-          <div class="wtemp-val"><span class="wtemp-num">Low</span><span class="wtemp-note">end of dry season</span></div>
-        </div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">🌅 Sunrise (for tour)</div>
-          <div class="wtemp-val"><span class="wtemp-num">~5:50am</span><span class="wtemp-note">enter park at 4am</span></div>
-        </div>
-        <div class="wtip wtip-hot">🔥 <strong>Hot & humid.</strong> Wear lightweight breathable clothes. Bring insect repellent — the jungle has mosquitoes. Drink plenty of water. For the 4am sunrise tour, it will feel cool (~22°C) — bring a light layer.</div>
+        <div class="wtemp-row"><div class="wtemp-label">💧 Humidity</div><div class="wtemp-val"><span class="wtemp-num">High</span><span class="wtemp-note">tropical jungle</span></div></div>
+        <div class="wtemp-row"><div class="wtemp-label">🌧️ Rain chance</div><div class="wtemp-val"><span class="wtemp-num">Low</span><span class="wtemp-note">end of dry season</span></div></div>
+        <div class="wtemp-row"><div class="wtemp-label">🌅 Sunrise</div><div class="wtemp-val"><span class="wtemp-num">~5:50am</span><span class="wtemp-note">enter park at 4am</span></div></div>
+        <div class="wtip wtip-hot">🔥 <strong>Hot & humid.</strong> Lightweight breathable clothes. DEET repellent essential at dawn. Drink lots of water. For the 4am tour, bring a light layer — it feels cool in the dark jungle (~22°C).</div>
       </div>
     </div>
-
-    <!-- ATITLÁN -->
     <div class="wcard">
-      <div class="wcard-header">
-        <div class="wcard-icon">🌋</div>
-        <div>
-          <div class="wcard-title">Lake Atitlán</div>
-          <div class="wcard-dates">Apr 4–9 · Santa Cruz La Laguna · 1,565m altitude</div>
-        </div>
-      </div>
+      <div class="wcard-header"><div class="wcard-icon">🌋</div><div><div class="wcard-title">Lake Atitlán</div><div class="wcard-dates">Apr 4–9 · Santa Cruz La Laguna · 1,565m altitude</div></div></div>
       <div class="wcard-body">
-        <div class="wtemp-row">
-          <div class="wtemp-label">☀️ Daytime high</div>
-          <div class="wtemp-val"><span class="wtemp-num">22–24°C</span><span class="wtemp-note">~72–75°F</span></div>
-        </div>
+        <div class="wtemp-row"><div class="wtemp-label">☀️ Daytime high</div><div class="wtemp-val"><span class="wtemp-num">22–24°C</span><span class="wtemp-note">~72–75°F</span></div></div>
         <div style="padding:2px 0 8px;"><div class="wbar wbar-warm" style="width:60%;"></div></div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">🌙 Night low</div>
-          <div class="wtemp-val"><span class="wtemp-num">14–16°C</span><span class="wtemp-note">~57–61°F · Cool!</span></div>
-        </div>
+        <div class="wtemp-row"><div class="wtemp-label">🌙 Night low</div><div class="wtemp-val"><span class="wtemp-num">14–16°C</span><span class="wtemp-note">~57–61°F · Bring a fleece!</span></div></div>
         <div style="padding:2px 0 8px;"><div class="wbar wbar-warm" style="width:35%;"></div></div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">💧 Humidity</div>
-          <div class="wtemp-val"><span class="wtemp-num">Comfortable</span><span class="wtemp-note">highland air</span></div>
-        </div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">🌧️ Rain chance</div>
-          <div class="wtemp-val"><span class="wtemp-num">Low–Medium</span><span class="wtemp-note">short afternoon showers possible</span></div>
-        </div>
-        <div class="wtemp-row">
-          <div class="wtemp-label">💨 Xocomil wind</div>
-          <div class="wtemp-val"><span class="wtemp-num">Afternoons</span><span class="wtemp-note">lake gets choppy after noon</span></div>
-        </div>
-        <div class="wtip wtip-cool">🌊 <strong>Warm days, cool evenings.</strong> Bring a light jacket or fleece for nights — you'll definitely want it. The pool may feel cool but refreshing in the afternoon. Plan water activities before noon — after that, the Xocomil wind picks up and makes the lake choppy.</div>
+        <div class="wtemp-row"><div class="wtemp-label">💧 Humidity</div><div class="wtemp-val"><span class="wtemp-num">Comfortable</span><span class="wtemp-note">highland air</span></div></div>
+        <div class="wtemp-row"><div class="wtemp-label">🌧️ Rain chance</div><div class="wtemp-val"><span class="wtemp-num">Low–Medium</span><span class="wtemp-note">short afternoon showers possible</span></div></div>
+        <div class="wtemp-row"><div class="wtemp-label">💨 Xocomil wind</div><div class="wtemp-val"><span class="wtemp-num">Afternoons</span><span class="wtemp-note">lake choppy after noon</span></div></div>
+        <div class="wtip wtip-cool">🌊 <strong>Warm days, cool evenings.</strong> A fleece is essential at night. Pool may feel refreshing rather than warm. Plan all water activities and boat trips before noon.</div>
       </div>
     </div>
-
   </div>
 
   <div class="wforecast-note">
-    📡 <strong>Live forecast not yet available for April 2–9.</strong> These are typical seasonal conditions based on historical weather for this region. Check back here around <strong>March 26–27</strong> for the actual 10-day forecast, or use <a href="https://weather.com" target="_blank" style="color:var(--jl);font-weight:500;">weather.com</a> or <a href="https://www.wunderground.com" target="_blank" style="color:var(--jl);font-weight:500;">wunderground.com</a> for detailed hourly forecasts as the trip approaches.
+    📡 <strong>Live forecast not yet available for April 2–9.</strong> These are typical seasonal conditions. Check back around <strong>March 26–27</strong> for the actual forecast, or use <a href="https://weather.com" target="_blank" style="color:var(--jl);font-weight:500;">weather.com</a> closer to the trip.
   </div>
 
   <div style="margin-top:28px;">
     <div class="slabel">What to Wear Each Day</div>
     <div class="days">
-      <div class="dc"><div class="dp">Apr 2–4<br>Tikal</div><div class="dcc"><h4>☀️ Hot jungle days · Cool pre-dawn</h4><p>Lightweight short sleeves and shorts during the day. For the 4am sunrise tour: long sleeves + light layer (it will feel cool in the dark). Closed shoes for jungle walking. Sunglasses and hat essential.</p></div></div>
-      <div class="dc"><div class="dp">Apr 4–9<br>Atitlán</div><div class="dcc"><h4>🌤️ Warm days · Cool nights · Possible afternoon showers</h4><p>T-shirts and light layers during the day. A fleece or light jacket for evenings and boat rides — the lake breeze makes it feel colder. One waterproof layer in case of a short afternoon shower. Comfortable walking shoes for village visits.</p></div></div>
+      <div class="dc"><div class="dp">Apr 2–4<br>Tikal</div><div class="dcc"><h4>☀️ Hot jungle days · Cool pre-dawn</h4><p>Lightweight short sleeves and shorts during the day. For the 4am sunrise tour: long sleeves + light layer + mosquito repellent. Closed shoes for jungle paths. Hat and sunglasses essential.</p></div></div>
+      <div class="dc"><div class="dp">Apr 4–9<br>Atitlán</div><div class="dcc"><h4>🌤️ Warm days · Cool nights · Possible afternoon showers</h4><p>T-shirts and light layers during the day. A fleece or light jacket for evenings and boat rides — mandatory. One waterproof layer for possible afternoon showers. Comfortable walking shoes for village visits.</p></div></div>
     </div>
   </div>
-
 </div>
 </div>
 
-<!-- ====== PACKING LIST ====== -->
+<!-- ====== PACKING ====== -->
 <div id="tab-pack" class="tc">
 <div class="con">
-  <p class="pack-intro">Tick items off as you pack them. The list is tailored for your trip — 2 nights in a hot jungle + 5 nights at a cool highland lake.</p>
+  <p class="pack-intro">Tick items off as you pack. Tailored for your trip — 2 nights in a hot jungle + 5 nights at a cool highland lake. <span style="background:#fde68a;padding:1px 6px;border-radius:3px;font-size:11px;font-weight:700;color:#7a5500;">ESSENTIAL</span> items are highlighted.</p>
 
   <div class="pack-section">
     <div class="pack-section-title">👗 Clothing</div>
     <div class="pack-grid">
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Lightweight t-shirts (×4–5)<span class="sub">Breathable fabric — Tikal is hot & humid</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Shorts (×2–3)<span class="sub">For Tikal days and lake activities</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Light trousers or leggings (×1–2)<span class="sub">For jungle walks and cooler evenings</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Fleece or light jacket 🌟<span class="sub">Essential for Atitlán evenings — gets down to 14°C</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Waterproof layer / rain jacket<span class="sub">Short afternoon showers possible at Atitlán</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Swimsuit (×2)<span class="sub">Infinity pool + lake swimming at Laguna Lodge</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Underwear & socks (×7)<span class="sub"></span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Light long-sleeve for sunrise tour<span class="sub">4am in Tikal jungle feels cool — ~22°C</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Lightweight t-shirts ×4–5<span class="sub">Breathable fabric — Tikal is hot & humid</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Shorts ×2–3<span class="sub">For Tikal days and lake activities</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Light trousers or leggings ×1–2<span class="sub">Jungle walks and cooler evenings at the lake</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Fleece or light jacket <span class="essential-tag">ESSENTIAL</span><span class="sub">Atitlán evenings drop to 14°C — you will need this</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Waterproof layer / rain jacket<span class="sub">Short afternoon showers possible at the lake</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Swimsuit ×2 <span class="essential-tag">ESSENTIAL</span><span class="sub">Infinity pool + lake swimming at Laguna Lodge</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Underwear & socks ×7<span class="sub"></span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Long sleeves for sunrise tour <span class="essential-tag">ESSENTIAL</span><span class="sub">4am in Tikal jungle — protects from mosquitoes & cool air</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Comfortable evening outfit<span class="sub">Laguna Lodge has a lovely candlelit restaurant</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Jeremy: same essentials + extra t-shirts<span class="sub">Kids go through clothes fast in the heat!</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Jeremy: extra t-shirts ×2<span class="sub">Kids go through clothes fast in the heat!</span></div></div>
     </div>
   </div>
 
   <div class="pack-section">
     <div class="pack-section-title">👟 Footwear</div>
     <div class="pack-grid">
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Closed walking/hiking shoes 🌟<span class="sub">Essential for Tikal ruins and nature reserve hikes</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Sandals or flip flops<span class="sub">For poolside and casual village walks</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Closed walking/hiking shoes <span class="essential-tag">ESSENTIAL</span><span class="sub">For Tikal ruins, jungle paths and nature reserve hikes</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Sandals or flip flops<span class="sub">Poolside and casual village walks</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Water shoes (optional)<span class="sub">Useful for lake swimming and lancha docks</span></div></div>
     </div>
   </div>
@@ -583,13 +535,13 @@
   <div class="pack-section">
     <div class="pack-section-title">🧴 Health & Toiletries</div>
     <div class="pack-grid">
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">DEET insect repellent 🌟<span class="sub">Essential for Tikal jungle — mosquitoes are real</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">High SPF sunscreen (×2)<span class="sub">Strong tropical sun — both jungle and lake</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">DEET insect repellent 30–50% <span class="essential-tag">ESSENTIAL</span><span class="sub">Critical for Tikal jungle at dawn. Spray clothes AND skin</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">High SPF sunscreen ×2 <span class="essential-tag">ESSENTIAL</span><span class="sub">Strong tropical sun at jungle and lake altitude</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Lip balm with SPF<span class="sub">Lake altitude + sun is harsh on lips</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Hand sanitiser & wet wipes<span class="sub">Useful in ruins and village markets</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Basic first aid kit<span class="sub">Plasters, paracetamol, antihistamine</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Rehydration sachets<span class="sub">Hot jungle days — dehydration can sneak up</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Prescription medications<span class="sub">Bring enough for the full trip + extra</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Rehydration sachets<span class="sub">Hot jungle days — dehydration can sneak up fast</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Prescription medications<span class="sub">Bring enough for full trip + a few days extra</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Anti-diarrhoea tablets<span class="sub">Just in case — new foods and water</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Shampoo, conditioner, soap<span class="sub">Small travel sizes</span></div></div>
     </div>
@@ -599,28 +551,29 @@
     <div class="pack-section-title">🎒 Gear & Accessories</div>
     <div class="pack-grid">
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Small daypack / backpack<span class="sub">For ruins, village visits, boat trips</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Torch / headlamp 🌟<span class="sub">Essential for Tikal — electricity is limited 5:30–10pm</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Wide-brimmed sun hat<span class="sub">For Tikal ruins and lake boat rides</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Sunglasses<span class="sub">Strong sun at both jungle and lake altitude</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Reusable water bottle<span class="sub">Important — only drink bottled water in Guatemala</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Dry bag or waterproof pouch<span class="sub">For lancha boat rides on the lake</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Power bank / phone charger<span class="sub">Limited power in Tikal — charge up during daytime hours</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Universal plug adapter<span class="sub">Guatemala uses US-style Type A/B plugs (same as SFO)</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Camera or phone for photos<span class="sub">Tikal at sunrise is unforgettable — charge the night before</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Binoculars (optional)<span class="sub">Amazing for spotting toucans and spider monkeys at Tikal</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Torch / flashlight <span class="essential-tag">ESSENTIAL</span><span class="sub">Critical for Tikal — electricity off between 10pm–5:30am. Also useful for 4am sunrise walk</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Headlamp (optional but handy)<span class="sub">Keeps hands free during jungle walks at night</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Wide-brimmed sun hat <span class="essential-tag">ESSENTIAL</span><span class="sub">Strong sun at Tikal ruins and lake boat rides</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Sunglasses<span class="sub">Strong sun at jungle and lake altitude</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Reusable water bottle <span class="essential-tag">ESSENTIAL</span><span class="sub">Only drink bottled/filtered water in Guatemala</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Dry bag or waterproof pouch<span class="sub">Protect phone and camera on lancha boat rides</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Power bank<span class="sub">Charge up during Tikal electricity hours. Useful on long travel day Apr 2</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Universal plug adapter<span class="sub">Guatemala uses US-style Type A/B plugs — same as SFO ✅</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Camera or phone<span class="sub">Tikal at sunrise is unforgettable — charge the night before</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Binoculars (optional)<span class="sub">Amazing for toucans and spider monkeys at Tikal</span></div></div>
     </div>
   </div>
 
   <div class="pack-section">
     <div class="pack-section-title">📄 Documents & Money</div>
     <div class="pack-grid">
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Passports (both) 🌟<span class="sub">Valid for at least 6 months beyond Apr 9</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">All flight confirmation printouts<span class="sub">United AZTFWG + TAG 40-916685550</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">All hotel confirmation printouts<span class="sub">Jungle Lodge + Laguna Lodge × 2</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Cash in US Dollars 🌟<span class="sub">$300–400 — many places cash only. Change to Quetzales on arrival.</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Credit card (Visa or Mastercard)<span class="sub">Backup — not always accepted but useful in cities</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Travel insurance documents<span class="sub">Emergency contact numbers saved in phone too</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Emergency contacts list<span class="sub">Hotel phones, Laguna Lodge: +502 4066 8135</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Passports (both) <span class="essential-tag">ESSENTIAL</span><span class="sub">Valid 6+ months beyond Apr 9, 2026</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">All flight confirmations printed<span class="sub">United AZTFWG + TAG 40-916685550</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">All hotel confirmations printed<span class="sub">Jungle Lodge 5691735213 + Laguna Lodge ×2</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Cash in US Dollars <span class="essential-tag">ESSENTIAL</span><span class="sub">$300–400. Many places cash only. Change to Quetzales on arrival</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Credit card (Visa or Mastercard)<span class="sub">Backup — not always accepted but useful</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Travel insurance documents<span class="sub">Emergency numbers saved in phone too</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Emergency contacts list<span class="sub">Laguna Lodge: +502 4066 8135</span></div></div>
     </div>
   </div>
 
@@ -628,15 +581,14 @@
     <div class="pack-section-title">🧒 For Jeremy</div>
     <div class="pack-grid">
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Small backpack of his own<span class="sub">Kids love having their own pack for adventures</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Snacks for the long travel day<span class="sub">Apr 2 is a very long day — 3 flights!</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Snacks for the long travel day<span class="sub">Apr 2 is very long — 3 flights!</span></div></div>
       <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Headphones + entertainment<span class="sub">For flights and downtime</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Long trousers for Tikal night/dawn<span class="sub">Protection from insects in the jungle at 4am</span></div></div>
-      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Swimwear (×2)<span class="sub">Pool at Laguna Lodge is wonderful</span></div></div>
+      <div class="pack-item essential" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Long trousers for Tikal dawn <span class="essential-tag">ESSENTIAL</span><span class="sub">Protection from mosquitoes in the jungle at 4am</span></div></div>
+      <div class="pack-item" onclick="togglePack(this)"><div class="pack-cb"></div><div class="pack-text">Swimwear ×2<span class="sub">Pool and lake swimming at Laguna Lodge</span></div></div>
     </div>
   </div>
 
   <div id="pack-count" class="pack-counter">0 items packed</div>
-
 </div>
 </div>
 
@@ -645,45 +597,18 @@
 <div class="con">
   <div class="costs">
     <h2>💰 Trip Costs Summary</h2>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">✈️ United Airlines — SFO ↔ GUA</div><div style="font-size:11px;color:#888;margin-top:2px;">AZTFWG · 2 passengers · Economy Plus</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$2,226.66</span><span class="cost-status cs-done">✓ Paid</span></div>
-    </div>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">✈️ TAG Airlines — GUA ↔ Flores</div><div style="font-size:11px;color:#888;margin-top:2px;">40-916685550 · 2 passengers · Direct</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$461.67</span><span class="cost-status cs-done">✓ Paid</span></div>
-    </div>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">🌿 Jungle Lodge Hotel, Tikal</div><div style="font-size:11px;color:#888;margin-top:2px;">5691735213 · 2 nights · Standard Double</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$334.87</span><span class="cost-status cs-done">✓ Confirmed</span></div>
-    </div>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">🌊 Laguna Lodge — Booking 1 (Apr 4–6)</div><div style="font-size:11px;color:#888;margin-top:2px;">Expedia 73400367131028 · 2 nights · Superior Double</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$682.83</span><span class="cost-status cs-done">✓ Paid</span></div>
-    </div>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">🌊 Laguna Lodge — Booking 2 (Apr 6–9)</div><div style="font-size:11px;color:#888;margin-top:2px;">219187 · 3 nights · Ceiba Suite + shuttle to GUA</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$1,136.60</span><span class="cost-status cs-done">✓ Confirmed</span></div>
-    </div>
-    <div class="cost-row" style="border-top:1px solid #e0ece5;margin-top:4px;">
-      <div><div style="font-weight:500;">🚐 Private transfer GUA → Panajachel (Apr 4)</div><div style="font-size:11px;color:#888;margin-top:2px;">~3hrs · To be booked</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">~$85</span><span class="cost-status cs-pend">⏳ Pending</span></div>
-    </div>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">🎿 Zipline — Reserva Natural Atitlán (Apr 5)</div><div style="font-size:11px;color:#888;margin-top:2px;">2 people</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">~$60</span><span class="cost-status cs-pend">⏳ Pending</span></div>
-    </div>
-    <div class="cost-row">
-      <div><div style="font-weight:500;">🚤 Voltan Adventures — Lake Villages (Apr 6)</div><div style="font-size:11px;color:#888;margin-top:2px;">Private lancha</div></div>
-      <div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">~$80</span><span class="cost-status cs-pend">⏳ Pending</span></div>
-    </div>
-    <div class="cost-row" style="border-top:2px solid var(--jade-pale);margin-top:8px;">
-      <div style="font-size:16px;">🌍 Estimated Total</div>
-      <div style="font-size:18px;color:var(--jade);">~$5,067</div>
-    </div>
+    <div class="cost-row"><div><div style="font-weight:500;">✈️ United Airlines — SFO ↔ GUA</div><div style="font-size:11px;color:#888;margin-top:2px;">AZTFWG · 2 passengers · Economy Plus</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$2,226.66</span><span class="cost-status cs-done">✓ Paid</span></div></div>
+    <div class="cost-row"><div><div style="font-weight:500;">✈️ TAG Airlines — GUA ↔ Flores</div><div style="font-size:11px;color:#888;margin-top:2px;">40-916685550 · 2 passengers · Direct</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$461.67</span><span class="cost-status cs-done">✓ Paid</span></div></div>
+    <div class="cost-row"><div><div style="font-weight:500;">🌿 Jungle Lodge Hotel, Tikal</div><div style="font-size:11px;color:#888;margin-top:2px;">5691735213 · 2 nights · Standard Double</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$334.87</span><span class="cost-status cs-done">✓ Confirmed</span></div></div>
+    <div class="cost-row"><div><div style="font-weight:500;">🌊 Laguna Lodge — Booking 1 (Apr 4–6)</div><div style="font-size:11px;color:#888;margin-top:2px;">Expedia 73400367131028 · 2 nights · Superior Double</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$682.83</span><span class="cost-status cs-done">✓ Paid</span></div></div>
+    <div class="cost-row"><div><div style="font-weight:500;">🌊 Laguna Lodge — Booking 2 (Apr 6–9)</div><div style="font-size:11px;color:#888;margin-top:2px;">219187 · 3 nights · Ceiba Suite + shuttle to GUA</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">$1,136.60</span><span class="cost-status cs-done">✓ Confirmed</span></div></div>
+    <div class="cost-row" style="border-top:1px solid #e0ece5;margin-top:4px;"><div><div style="font-weight:500;">🚐 Private transfer GUA → Panajachel (Apr 4)</div><div style="font-size:11px;color:#888;margin-top:2px;">~3hrs · To be booked</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">~$85</span><span class="cost-status cs-pend">⏳ Pending</span></div></div>
+    <div class="cost-row"><div><div style="font-weight:500;">🎿 Zipline — Reserva Natural Atitlán (Apr 5)</div><div style="font-size:11px;color:#888;margin-top:2px;">2 people</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">~$60</span><span class="cost-status cs-pend">⏳ Pending</span></div></div>
+    <div class="cost-row"><div><div style="font-weight:500;">🚤 Voltan Adventures — Lake Villages (Apr 6)</div><div style="font-size:11px;color:#888;margin-top:2px;">Private lancha</div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:600;">~$80</span><span class="cost-status cs-pend">⏳ Pending</span></div></div>
+    <div class="cost-row" style="border-top:2px solid var(--jade-pale);margin-top:8px;"><div style="font-size:16px;">🌍 Estimated Total</div><div style="font-size:18px;color:var(--jade);">~$5,067</div></div>
   </div>
   <div style="margin-top:16px;padding:14px 18px;background:var(--mist);border-radius:10px;font-size:13px;color:var(--jade);line-height:1.6;">
-    💡 <strong>Not included:</strong> Meals outside hotel, lanchas (~$5–10/ride), Tikal sunrise tour (~$20pp), Indian Nose hike (~$15pp), personal spending. Budget ~$300–400 extra.
+    💡 <strong>Not included:</strong> Meals outside hotel, lanchas (~$5–10/ride), Tikal sunrise tour (~$20pp), personal spending. Budget ~$300–400 extra.
   </div>
 </div>
 </div>
@@ -703,15 +628,15 @@
   }
   function togglePack(item){
     item.classList.toggle('packed');
-    const cb = item.querySelector('.pack-cb');
-    cb.textContent = item.classList.contains('packed') ? '✓' : '';
+    const cb=item.querySelector('.pack-cb');
+    cb.textContent=item.classList.contains('packed')?'✓':'';
     updatePackCount();
   }
   function updatePackCount(){
-    const total = document.querySelectorAll('.pack-item').length;
-    const done = document.querySelectorAll('.pack-item.packed').length;
-    const el = document.getElementById('pack-count');
-    if(el) el.textContent = done + ' of ' + total + ' items packed';
+    const total=document.querySelectorAll('.pack-item').length;
+    const done=document.querySelectorAll('.pack-item.packed').length;
+    const el=document.getElementById('pack-count');
+    if(el) el.textContent=done+' of '+total+' items packed';
   }
   updatePackCount();
 </script>
